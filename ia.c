@@ -6,7 +6,7 @@
 /*   By: tuardoui <tuardoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 02:23:54 by tuardoui          #+#    #+#             */
-/*   Updated: 2014/03/09 09:26:02 by tuardoui         ###   ########.fr       */
+/*   Updated: 2014/03/09 18:12:09 by fmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ void		ft_init_map(t_env *env)
 	int		x;
 	int		y;
 
-    y = 0;
-    while (y < env->y)
+	y = 0;
+	while (y < env->y)
 	{
 		x = 0;
-        while (x < env->x)
+		while (x < env->x)
 		{
-            if (env->game[y][x] == '2')
+			if (env->game[y][x] == '2')
 				ft_change_both_map(env, x, y, -1);
-            else if (env->game[y][x] == '1')
+			else if (env->game[y][x] == '1')
 				ft_change_both_map(env, x, y, -2);
 			else
 				ft_change_both_map(env, x, y, 0);
