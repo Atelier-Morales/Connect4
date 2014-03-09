@@ -74,7 +74,9 @@ int		check_diagonal_dl(char **game, int x, int y, char c)
 			return (0);
 		if (check == 4)
 			return (check);
-		check = game[i][j] == c ? ++check : check;
+		/*check = game[i][j] == c ? ++check : check;*/
+		if (game[i][j] == c)
+			++check;
 		i++;
 		j--;
 	}
@@ -103,7 +105,9 @@ int		check_diagonal_dr(char **game, int x, int y, char c)
 			return (0);
 		if (check == 4)
 			return (check);
-		check = game[i][j] == c ? ++check : check;
+		/*check = game[i][j] == c ? ++check : check;*/
+		if (game[i][j] == c)
+			++check;
 		i++;
 		j++;
 	}
