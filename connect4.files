@@ -2,3 +2,12 @@ main.c
 Makefile
 connect4.h
 getnextline.c
+atk.c
+def.c
+ia.c
+process.c
+puissance4.h
+play.c
+check.c
+print.c
+init.c
