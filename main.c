@@ -201,14 +201,12 @@ int     check_diagonal_dl(char **game, int x, int y)
     i = 0;
     j = 0;
     check = 0;
-    printf("x = %d\n", x);
     while (game[y + i])
     {
         if (check == 4)
             return (check);
         if (game[y + i][x - j] == '1')
         {
-            printf("i = %d j = %d check = %d\n", i, j, check);
             ++check;
         }
         i++;
@@ -226,14 +224,12 @@ int     check_diagonal_dr(char **game, int x, int y)
     i = 0;
     j = 0;
     check = 0;
-    printf("x = %d\n", x);
     while (game[y + i])
     {
         if (check == 4)
             return (check);
         if (game[y + i][x + j] == '1')
         {
-            printf("i = %d j = %d check = %d\n", i, j, check);
             ++check;
         }
         i++;
@@ -251,14 +247,12 @@ int     check_diagonal_ul(char **game, int x, int y)
     i = 0;
     j = 0;
     check = 0;
-    printf("x = %d\n", x);
     while (game[y - i])
     {
         if (check == 4)
             return (check);
         if (game[y - i][x - j] == '1')
         {
-            printf("i = %d j = %d check = %d\n", i, j, check);
             ++check;
         }
         i++;
@@ -276,14 +270,12 @@ int     check_diagonal_ur(char **game, int x, int y)
     i = 0;
     j = 0;
     check = 0;
-    printf("x = %d\n", x);
     while (game[y - i])
     {
         if (check == 4)
             return (check);
         if (game[y - i][x + j] == '1')
         {
-            printf("i = %d j = %d check = %d\n", i, j, check);
             ++check;
         }
         i++;
@@ -312,7 +304,6 @@ int     winning_play(t_env *env, int move, int pos)
 void    play_IA_first(t_env *env)
 {
     env->game[env->y  - 1][(env->x - 1) / 2] = '2';
-    env->game[env->y  - 2][(env->x - 1) / 2] = '2';
 }
 
 int main(int ac, char **av)
@@ -329,7 +320,6 @@ int main(int ac, char **av)
         return (0);
     srand (time(NULL));
     start = rand() % 2 + 1;
-    printf("first = %d\n", start);
     if (start == 2)
         play_IA_first(&env);
     render_set(env.x, env.y, &env);
